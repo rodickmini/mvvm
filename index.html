@@ -29,19 +29,20 @@
     //!function(){}() 或 ~function(){}() 或 +function(){}() 或 -function(){}()
     !function(f) {
       if (window.define && define.amd) define(f) //如果采用了AMD模块加载器，则将函数定义成一个模块
-      else window.mvvm = f() //否则，将函数执行后的返回值（mvvm对象）挂载在window.mvvm属性上
+      else window.mvvm = f() //否则，将函数执行后的返回值（即一个mvvm函数）挂载在window.mvvm属性上
     }(function() {
 
     var start = '{{'
     var end = '}}'
 
     function mvvm(sel, opt) {
-      return new MVVM(sel, opt)
+      return new MVVM(sel, opt) //函数返回一个MVVM对象
     }
 
+    //构造函数
     function MVVM(sel, opt) {
-      this.root = document.querySelector(sel) // root element
-      var model = this.pureModel = opt.model || {}
+      this.root = document.querySelector(sel) //获取根节点，并赋值给root属性
+      var model = this.pureModel = opt.model || {} //将opt传递进来的model对象赋值给model变量以及pureModel属性
       var model2sync = {} // save nodes
       this.model = getProxyModel()
       var me = this
