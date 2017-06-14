@@ -1,0 +1,19 @@
+{
+  "name": "mvvm",
+  "version": "1.0.0",
+  "description": "手动实现一个最简单的mvvm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodickmini/mvvm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodickmini/mvvm/issues"
+  },
+  "homepage": "https://github.com/rodickmini/mvvm#readme"
+}
